@@ -1,0 +1,220 @@
+html {
+  box-sizing: border-box;
+  font-family: "Fira Code", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  /* background: #3eaf9c;
+  font-size: 18px;
+  font-weight: 100;
+  margin: 0;
+  color: white; */
+}
+
+.music-player {
+  display: flex;
+}
+
+.sidebar {
+  height: 100vh;
+  background: #F2EFED;
+  box-shadow: 0px 8px 10px #B8BABF;
+}
+
+#navbar {
+  margin-top: 30px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 30px 50px;
+}
+
+.sidebar a.selected i {
+  color: #4FA896;
+}
+
+.sidebar i {
+  font-size: 48px;
+  color: #8C6F5E;
+}
+
+.main-wrapper {
+  /* flex: 1 1 auto; */
+  width: 100%;
+  height: 100vh;
+  background: #F2F2F2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#album {
+  position: relative;
+  min-width: 80%;
+  height: 600px;
+  border: 20px solid #BF9F93;
+}
+
+.music-player__album__cover {
+  /* box-shadow: -10px 7px 30px #000; */
+  position: absolute;
+  top: 5%;
+  left: 10%;
+}
+
+.music-player__album__info {
+  position: absolute;
+  bottom: 10%;
+  right: 20%;
+  z-index: 10;
+  border: 1px solid #73574D;
+  background: #F4F4F4;
+  color: #8C6F5E;
+  width: 420px;
+  padding: 20px 15px;
+}
+
+.music-player__album__name,
+.music-player__album__artist,
+.music-player__album__year {
+  display: block;
+  /* padding: 15px; */
+}
+
+.music-player__album__name {
+  font-size: 40px;
+}
+
+.music-player__album__artist,
+.music-player__album__year {
+  font-size: 30px
+}
+
+.music-player_playlist__title {
+  text-align: center;
+  font-size: 60px;
+  color: #73574D;
+  border-bottom: 3px solid #73574D;
+  margin-bottom: 20px;
+}
+
+.music-player__playlist__songs {
+  list-style: none;
+  counter-reset: number-counter;
+}
+
+.music-player__playlist__song {
+  counter-increment: number-counter;
+  color: #8C6F5E;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.music-player__playlist__song::before {
+  content: counter(number-counter) " ";
+  color: inherit;
+  /* font-weight: bold; */
+  margin-right: 20px;
+}
+
+.music-player__song__name,
+.music-player__song__time {
+  /* color: #8C6F5E; */
+  /* font-size: 24px; */
+}
+
+.music-player__song__time {
+  float: right;
+}
+
+#player figure {
+  text-align: center;
+}
+
+.music-player__player__info {
+  float: left;
+  margin-right: 50px;
+}
+
+.music-player__player__song,
+.music-player__player__album,
+.music-player__player__artist {
+  display: block;
+  font-size: 24px;
+  color: #8C6F5E;
+  margin: 3px 0;
+}
+
+.music-player__player__song {
+  font-size: 36px;
+  font-weight: bold;
+  color: #73574D;
+  margin-bottom: 5px;
+}
+
+.music-player__player__controls {
+  float: right;
+}
+
+.button,
+.music-player__control__volume {
+  color: #8C6F5E;
+}
+
+.button i,
+.music-player__control__volume i{
+  font-size: 36px;
+}
+
+.music-player__control__shuffle,
+.music-player__control__repeat {
+  color: #D6D6D6;
+}
+
+.music-player__control__repeat {
+  margin-right: 20px;
+}
+
+.music-player__control__volume progress {
+  vertical-align: super;
+}
+
+.music-player__control__volume {
+  display: inline-block;
+}
+
+.music-player__control__timer {
+  font-size: 30px;
+  color: #8C6F5E;
+}
+
+.music-player__control__timer-bar progress {
+  width: 100%;
+}
+
+.music-player__control__total-time {
+  float: right;
+}
+
+progress::-webkit-progress-bar {
+  color: yellow;
+}
+
+progress::-webkit-progress-inner-element {
+  color: yellow;
+}
+
+progress::-webkit-progress-inner-value {
+  color: yellow;
+}
+
+progress::-webkit-progress-value {
+  color: yellow;
+}

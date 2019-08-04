@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Music Player Project</title>
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#2F3BA2">
+
+  <!-- Your styles -->
+  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/css/reset.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+  <div class="music-player">
+    <div class="sidebar">
+      <nav id="navbar">
+        <a href="#album"><i class="material-icons">home</i></a>
+        <a href="#playlist"><i class="material-icons">playlist_play</i></a>
+        <a href="#player"><i class="material-icons">play_arrow</i></a>
+      </nav>
+    </div>
+    <main class="main-wrapper">
+      <section id="album" class="music-player-section">
+        <figure class="music-player__album__cover">
+          <img src="./src/assets/images/91eIIIfAlSL._SL1500_@2x.png" alt="The Album" width="472" height="472">
+        </figure>
+        <div class="music-player__album__info">
+          <span class="music-player__album__name">OK Computer</span>
+          <span class="music-player__album__artist">Radiohead</span>
+          <span class="music-player__album__year">1997</span>
+        </div>
+      </section>
+      <section id="playlist" style="display: none;" class="music-player-section">
+        <h1 class="music-player_playlist__title">OK COMPUTER</h1>
+        <ul class="music-player__playlist__songs">
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Airbag</span>
+            <span class="music-player__song__time">4:44</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Paranoid Android</span>
+            <span class="music-player__song__time">6:23</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Subterranean Homesick Alien</span>
+            <span class="music-player__song__time">4:27</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Exit Music (For a Film)</span>
+            <span class="music-player__song__time">4:24</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Let Down</span>
+            <span class="music-player__song__time">4:59</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Karma Police</span>
+            <span class="music-player__song__time">4:21</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Fitter Happier</span>
+            <span class="music-player__song__time">1:57</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Electioneering</span>
+            <span class="music-player__song__time">3:50</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Climbing Up the Walls</span>
+            <span class="music-player__song__time">4:45</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">No Surprises</span>
+            <span class="music-player__song__time">3:48</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">Lucky</span>
+            <span class="music-player__song__time">4:19</span>
+          </li>
+          <li class="music-player__playlist__song">
+            <span class="music-player__song__name">The Tourist</span>
+            <span class="music-player__song__time">5:24</span>
+          </li>
+        </ul>
+      </section>
+      <section id="player" style="display: none;" class="music-player-section">
+        <figure>
+          <img src="./src/assets/images/91eIIIfAlSL._SL1500_@2x.png" alt="The Album" width="472" height="472">
+        </figure>
+        <div class="music-player__player__info">
+          <span class="music-player__player__song">Airbag</span>
+          <span class="music-player__player__album">OK Computer</span>
+          <span class="music-player__player__artist">Radiohead</span>
+        </div>
+        <div class="music-player__player__controls">
+          <div class="music-player__control__function">
+            <button id="shuffleBtn" class="button music-player__control__shuffle">
+              <i class="material-icons">shuffle</i>
+            </button>
+            <button id="repeatBtn" class="button music-player__control__repeat">
+              <i class="material-icons">repeat</i>
+            </button>
+            <button id="skipPreBtn" class="button music-player__control__skip-previous">
+              <i class="material-icons">skip_previous</i>
+            </button>
+            <button id="playBtn" class="button music-player__control__play">
+              <i class="material-icons">play_circle_outline</i>
+            </button>
+            <button id="skipNextBtn" class="button music-player__control__skip-next">
+              <i class="material-icons">skip_next</i>
+            </button>
+            <div class="music-player__control__volume">
+              <i class="material-icons">volume_down</i>
+              <!-- <button id="skipNextBtn" class="music-player__control__volume">
+              </button> -->
+              <progress value="22" max="100"></progress>
+            </div>
+          </div>
+          <div class="music-player__control__timer">
+            <span class="music-player__control__current-time">0:00</span>
+            <span class="music-player__control__total-time">0:00</span>
+            <div class="music-player__control__timer-bar">
+              <progress value="22" max="100"></progress>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    window.onload = function () {
+      const navEle = document.getElementById('navbar')
+      const linkEle = Array.from(navEle.children)
+      const sections = Array.from(document.querySelectorAll('section'))
+      linkEle.forEach(ele => {
+        ele.addEventListener('click', (e) => {
+          // e.currentTarget.classList.toggle('selected')
+          const target = e.currentTarget.hash
+          sections.forEach(s => {
+            if (target.search(s.id) > -1) {
+              s.style.display = 'block'
+            } else {
+              s.style.display = 'none'
+            }
+          })
+        })
+      })
+    }
+  </script>
+  <script src="./src/js/app.js"></script>
+</body>
+</html>
